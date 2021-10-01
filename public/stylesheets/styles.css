@@ -1,0 +1,310 @@
+/* || Variables */
+:root {
+  /* Colors */
+  --primary: #0a67c2;
+  --secondary: #C2650A;
+  --grey: #7d7d7d;
+  --light-grey: #f0f0f0;
+
+  /* Spacing */
+  --main-content-spacing: 4rem;
+
+  /* Button / Input */
+  --button-padding: 0.5rem 2rem;
+  --input-select-padding: 0.5rem 1rem;
+  
+  /* Widths */
+  --content-width: 70rem;
+
+  /* Borders */
+  --main-border-radius: 2.5px;
+}
+
+/* || General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* In order to use rem units effectively, set font-size to 10pxs. */
+html { font-size: 10px; }
+
+body, 
+textarea {
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.flex { display: flex; }
+.flex-1 { flex: 1; }
+.jc-between { justify-content: space-between;}
+.m-top-20 { margin-top: 2rem; }
+.m-top-5 { margin-top: 0.5rem; }
+.m-left-10 { margin-left: 1rem; }
+
+.green { color: green; }
+.yellow { color: yellowgreen }
+.orange { color: orange }
+.red { color: red; }
+.grey { color: grey; }
+
+.h-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.v-flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-ai-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-jc-center {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: #000; 
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+label, 
+select, 
+input {
+  display: block;
+  width: 100%;
+}
+
+input, 
+select {
+  padding: var(--input-select-padding);
+  border-radius: 2.5px;
+}
+
+/* || Typography */
+h1 { font-size: 2.2rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.6rem; }
+a, p, span, button, label, input, textarea { font-size: 1.4rem; }
+
+/* || Header */
+.top-header {
+  position: sticky;
+  top: 0;
+  height: 6rem;
+  background-color: var(--primary);
+  padding-left: var(--main-content-spacing); 
+  padding-right: var(--main-content-spacing); 
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.top-nav a {
+  color: #fff;
+}
+
+.top-nav a + a {
+  margin-left: 2rem;
+}
+
+/* || Aside */
+aside {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 275px;
+  background-color: #fafafa;
+  height: calc(100vh - 6rem);
+  padding-top: var(--main-content-spacing); 
+  padding-left: var(--main-content-spacing); 
+}
+
+aside p {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    display: none;
+  }
+}
+
+/* || Main Content */
+main {
+  margin-left: 275px;
+  overflow: hidden auto;
+}
+
+.main-container {
+  margin: var(--main-content-spacing) auto 0; 
+  padding: 0 var(--main-content-spacing);
+  max-width: var(--content-width);
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    margin-left: 0;
+  }
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
+}
+
+.section-header > h2 {
+  margin-top: 0.5rem;
+  font-size: 1.6rem;
+  /* color: var(--grey); */
+  font-weight: 500;
+}
+
+.category {
+  font-size: 1.5rem;
+}
+
+.warehouse header {
+  margin-bottom: 3rem;
+}
+
+/* || Cards */
+/* Product */
+.product-card {
+  padding: 1rem 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.product-card .name {
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.product-card .priority {
+  font-size: 1.2rem;
+}
+
+.product-card .date {
+  color: var(--grey);
+  font-size: 1.2rem;
+}
+
+/* Warehouse */
+.warehouse-card {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--light-grey);
+  margin-bottom: 0.5rem;
+}
+
+.warehouse-card .name {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.warehouse-card .location {
+  color: var(--grey);
+}
+
+/* || Forms */
+.form-container {
+  border: 1px solid #ddd;
+  padding: 2rem 4rem;
+  margin: 0 auto;
+  border-radius: var(--main-border-radius);
+}
+
+@media screen and (max-width: 768px) {
+  .form-container {
+    padding: 2rem;
+  }
+}
+
+.form-container h3 {
+  margin-bottom: 1.5rem;
+}
+
+form label {
+  margin-bottom: 0.5rem;
+}
+
+form input {
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+}
+
+form select {
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+}
+
+form .state-field {
+  margin-left: 1rem;
+}
+
+form button {
+  background-color: var(--secondary);
+  color: #fff;
+  margin-top: 2rem;
+  font-weight: 600;
+  width: 10rem;
+  padding: var(--button-padding);
+  border-radius: var(--main-border-radius);
+}
+
+form .cancel-button {
+  background-color: rgba(221, 221, 221, 0.673);
+  color: #000;
+  margin-right: 0.5rem;
+}
+
+.concealable-button {
+  margin-top: 1rem; 
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rem;
+}
+
+.concealable-button .add-icon {
+  display: flex;
+  align-items: center;
+}
+
+.concealable-button span + span {
+  font-size: 1.4rem;
+  margin-left: 1rem; 
+  color: var(--secondary)
+}
+
+.concealable-form {
+  margin-top: 1rem;
+  margin-bottom: 10rem;
+}
+
+.hide { display: none; }
+
+/* Register / Login */
+.form-container header {
+  margin-bottom: 1rem;
+}
+
+.form-container a {
+  color: var(--secondary);
+}
+
+.form-container h1 {
+  margin-bottom: 0.5rem;
+}

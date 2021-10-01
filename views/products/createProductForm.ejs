@@ -1,0 +1,33 @@
+<section id="create-product-form" class="form-container concealable-form hide">
+  <h3>Create product</h3>
+  <p>* are required feilds.</p>
+  <br>
+  <form action="/products/create" method="POST">
+    <label for="name">Name*</label>
+    <input type="text" id="name" name="name" required>
+    <div class="flex">
+      <div class="flex-1">
+        <label for="priority">Priority*</label>
+        <select id="priority" name="priority">
+          <option value="Out of Stock" selected>Out of Stock</option>
+          <option value="Low Stock">Low Stock</option>
+          <option value="Medium Stock">Medium Stock</option>
+          <option value="Fully Stock">Fully Stock</option>
+        </select>
+      </div>
+      <div class="flex-1 m-left-10">
+        <label for="type">Type*</label>
+        <select id="type" name="type">
+          <option value="Inventory" selected>Inventory</option>
+          <option value="Brand Packaging">Brand Packaging</option>
+          <option value="Ohi Packaging">Ohi Packaging</option>
+        </select>
+      </div>
+    </div>
+    <!-- <label for="brand">Brand</label>
+    <input type="text" id="brand" name="brand"> -->
+    <input type="hidden" id="warehouse" name="warehouse" value="<%= warehouse %>">
+    <button id="cancel-create-warehouse-form" class="cancel-button" type="button">Cancel</button>
+    <button type="submit">Create</button>
+  </form> 
+</section>

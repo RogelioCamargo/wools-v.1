@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <%- include("../partials/head") %>
+  <body>
+    <%- include("../partials/header") %>
+    <div class="flex">
+      <%- include("../partials/aside") %>
+      <section class="flex-1">
+        <main class="warehouse">
+          <section class="main-container">
+            <header class="section-header">
+                <h1><%= warehouse.name %></h1>
+                <h2><%= warehouse.location %></h2>
+            </header>
+            <% if (inventory.length > 0) { %>
+              <section>
+                <h3 class="category">Inventory</h3>
+                <% inventory.forEach(product => { %>
+                  <%- include("../products/productCard", { product }) %>
+                <% }) %>
+              </section>
+            <% } %>
+            <% if (brandPackaging.length > 0) { %>
+              <section>
+                <h3 class="category m-top-20">Brand Packaging</h3>
+                <% brandPackaging.forEach(product=> { %>
+                  <%- include("../products/productCard", { product }) %>
+                <% }) %>
+              </section>
+            <% } %>
+            <% if (ohiPackaging.length > 0) { %>
+              <section>
+                <h3 class="category m-top-20">Ohi Packaging</h3>
+                <% ohiPackaging.forEach(product=> { %>
+                  <%- include("../products/productCard", { product }) %>
+                <% }) %>
+              </section>
+            <% } %>
+            <button id="open-create-product-form" class="concealable-button">
+              <span class="add-icon">
+                <svg width="13" height="13">
+                  <path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="#C2650A"
+                    fill-rule="evenodd"></path>
+                </svg>
+              </span>
+              <span>Product</span>
+            </button>
+            <%- include("../products/createProductForm", { warehouse: warehouse._id, type: "Inventory" }) %>
+          </section>
+        </main>
+      </section>
+    </div>
+    <script src="/javascripts/product.js"></script>
+  </body>
+</html>
