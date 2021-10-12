@@ -7,7 +7,6 @@ const User = require("../models/user");
 
 exports.user_login_get = (req, res, next) => {
   if (req.user) return res.redirect("/dashboard");
-  console.log(req.flash("error"));
   res.render("login", { title: "Login", errors: [] });
 };
 
@@ -62,7 +61,7 @@ exports.user_register_post = [
         if (err) {
           res.redirect("/users/register");
         }
-
+        req.flash("success", "User created successfully, please log in")
         res.redirect("/users/login");
       });
     });

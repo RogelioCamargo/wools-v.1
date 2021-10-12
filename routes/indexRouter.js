@@ -13,6 +13,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get("/dashboard", async (req, res, next) => {
+  console.log(req.flash("warnings"));
   try {
     const warehouses = await Warehouse.find({});
     res.render("./warehouses/dashboard", { title: "Dashboard", warehouses });

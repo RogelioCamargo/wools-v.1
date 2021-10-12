@@ -3,10 +3,15 @@
     <div class="alert alert-warning">
       <p><%= error.msg %></p>
     </div>
-    <% }) %>
+  <% }) %>
 <% } %>
 <% if (error.length > 0) { %>
-    <div class="alert alert-danger">
-      <p><%= error %></p>
-    </div>
+  <div class="alert alert-danger">
+    <p><%= error %></p>
+  </div>
+<% } %>
+<% if (success.length > 0) { %>
+  <div class="alert alert-success">
+    <p><%= success %></p>
+  </div>
 <% } %>

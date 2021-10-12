@@ -12,6 +12,7 @@
                 <h1><%= warehouse.name %></h1>
                 <h2><%= warehouse.location %></h2>
             </header>
+            <%- include("../partials/messages", { errors: [] }) %>
             <% if (inventory.length > 0) { %>
               <section>
                 <h3 class="category">Inventory</h3>

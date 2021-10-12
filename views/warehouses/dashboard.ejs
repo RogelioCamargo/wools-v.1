@@ -11,6 +11,7 @@
             <header class="section-header">
               <h1>Warehouses</h1>
             </header>
+            <%- include("../partials/messages", { errors: [] }) %>
             <% warehouses.forEach(warehouse => { %>
               <%- include("./warehouseCard", { warehouse }) %>
             <% }) %>

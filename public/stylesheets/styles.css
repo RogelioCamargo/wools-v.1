@@ -84,6 +84,7 @@ select,
 input {
   display: block;
   width: 100%;
+  -webkit-appearance: none;
 }
 
 input, 
@@ -327,4 +328,10 @@ form .cancel-button {
   color: #856404;
   background-color: #fff3cd;
   border-color: #fff3cd;
+}
+
+.alert-success {
+  color: #155724; 
+  background-color: #d4edda;
+  border-color: #d4edda;
 }

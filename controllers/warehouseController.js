@@ -1,6 +1,7 @@
 const Warehouse = require("../models/warehouse");
 const Product = require("../models/product");
 const async = require("async");
+const { body, validationResult } = require("express-validator");
 
 exports.warehouse_list = async (req, res, next) => {
   try {
@@ -12,14 +13,27 @@ exports.warehouse_list = async (req, res, next) => {
 };
 
 // Create
-exports.warehouse_post = async (req, res, next) => {
-  try {
-    const warehouse = await Warehouse.create(req.body); 
-    return res.redirect("/dashboard");
-  } catch (err) {
-    return next(err);
+exports.warehouse_post = [
+  body("name").not().isEmpty().withMessage("Name field required").trim(), 
+  body("city").not().isEmpty().withMessage("City field required").trim(),
+  async (req, res, next) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      req.flash("error", "Please fill all required fields");
+      res.redirect("/dashboard");
+      return;
+    }
+
+    try {
+      const warehouse = await Warehouse.create(req.body); 
+      return res.redirect("/dashboard");
+    } catch (err) {
+      return next(err);
+    }
   }
-};
+];
+
 
 // Details
 exports.warehouse_get = async (req, res, next) => {
