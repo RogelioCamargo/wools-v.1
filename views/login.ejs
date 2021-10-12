@@ -13,6 +13,7 @@
                 <h1><%= title %></h1>
                 <p>Don't have an account? <a href="/users/register">Register</a></p>
               </header>
+              <%- include("./partials/messages", { errors }) %>
               <form action="/users/login" method="POST">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
