@@ -15,16 +15,18 @@
             <% warehouses.forEach(warehouse => { %>
               <%- include("./warehouseCard", { warehouse }) %>
             <% }) %>
-            <button id="open-create-warehouse-form" class="concealable-button">
-              <span class="add-icon">
-                <svg width="13" height="13">
-                  <path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="#C2650A"
-                    fill-rule="evenodd"></path>
-                </svg>
-              </span>
-              <span>Warehouse</span>
-            </button>
-            <%- include("./createWarehouseForm", { title: "Create warehouse" }) %>
+            <% if (currentUser) { %>
+              <button id="open-create-warehouse-form" class="concealable-button">
+                <span class="add-icon">
+                  <svg width="13" height="13">
+                    <path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="#C2650A"
+                      fill-rule="evenodd"></path>
+                  </svg>
+                </span>
+                <span>Warehouse</span>
+              </button>
+              <%- include("./createWarehouseForm", { title: "Create warehouse" }) %>
+            <% } %>
           </section>
         </main>
       </div>

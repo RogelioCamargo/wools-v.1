@@ -15,24 +15,27 @@
             <%- include("../partials/messages", { errors: [] }) %>
             <section>
               <h3 class="category">Announcements</h3>
-              
               <% if (announcements.length > 0) { %>
                 <% announcements.forEach(announcement => { %>
                   <%- include("../announcements/announcementCard", { announcement }) %>
                 <% }) %>
               <% } else { %>
-                <p class="none-message">No announcements.</p>
+                <p class="none-message">No announcements</p>
               <% } %>
-              <button id="open-create-announcement-form" class="concealable-button">
-                <span class="add-icon">
-                  <svg width="13" height="13">
-                    <path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="#C2650A"
-                      fill-rule="evenodd"></path>
-                  </svg>
-                </span>
-                <span>Announcement</span>
-              </button>
-              <%- include("../announcements/createAnnouncementForm", { warehouse: warehouse._id, user: currentUser._id }) %>
+              <% if (currentUser) { %>
+                <button id="open-create-announcement-form" class="concealable-button">
+                  <span class="add-icon">
+                    <svg width="13" height="13">
+                      <path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="#C2650A"
+                        fill-rule="evenodd"></path>
+                    </svg>
+                  </span>
+                  <span>Announcement</span>
+                </button>
+                <%- include("../announcements/createAnnouncementForm", { warehouse: warehouse._id, user: currentUser._id }) %>
+              <% } else { %>
+                <div class="m-bottom-30"></div>
+              <% } %>
             </section>
             <% if (inventory.length > 0) { %>
               <section>
@@ -58,16 +61,18 @@
                 <% }) %>
               </section>
             <% } %>
-            <button id="open-create-product-form" class="concealable-button">
-              <span class="add-icon">
-                <svg width="13" height="13">
-                  <path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="#C2650A"
-                    fill-rule="evenodd"></path>
-                </svg>
-              </span>
-              <span>Product</span>
-            </button>
-            <%- include("../products/createProductForm", { warehouse: warehouse._id }) %>
+            <% if (currentUser) { %>
+              <button id="open-create-product-form" class="concealable-button">
+                <span class="add-icon">
+                  <svg width="13" height="13">
+                    <path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="#C2650A"
+                      fill-rule="evenodd"></path>
+                  </svg>
+                </span>
+                <span>Product</span>
+              </button>
+              <%- include("../products/createProductForm", { warehouse: warehouse._id }) %>
+            <% } %>
           </section>
         </main>
       </section>
