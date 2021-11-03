@@ -1,5 +1,6 @@
 const Warehouse = require("../models/warehouse");
 const Product = require("../models/product");
+const Announcement = require("../models/announcement"); 
 const async = require("async");
 const { body, validationResult } = require("express-validator");
 
@@ -43,6 +44,9 @@ exports.warehouse_get = async (req, res, next) => {
     }, 
     products: (callback) => {
       Product.find({ warehouse: req.params.id }).exec(callback);
+    }, 
+    announcements: (callback) => {
+      Announcement.find({}).populate("user").exec(callback); 
     }
   }, (err, results) => {
     if (err) return next(err); 
@@ -50,7 +54,7 @@ exports.warehouse_get = async (req, res, next) => {
     let inventory = [];
     let brandPackaging = []; 
     let ohiPackaging = []; 
-    const { warehouse, products } = results; 
+    const { announcements, warehouse, products } = results; 
     
     products.forEach(product => {
       if (product.type === "Inventory") 
@@ -66,7 +70,8 @@ exports.warehouse_get = async (req, res, next) => {
       warehouse,
       inventory,
       brandPackaging, 
-      ohiPackaging 
+      ohiPackaging, 
+      announcements
     }); 
   });
 };

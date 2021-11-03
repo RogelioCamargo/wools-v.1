@@ -84,7 +84,6 @@ select,
 input {
   display: block;
   width: 100%;
-  -webkit-appearance: none;
 }
 
 input, 
@@ -183,6 +182,14 @@ main {
   margin-bottom: 3rem;
 }
 
+/* || Announcements */
+.none-message {
+  font-size: 1.4rem;
+  padding: 1rem 0; 
+  color: var(--grey);
+  border-bottom: 1px solid #f4f4f4;
+}
+
 /* || Cards */
 /* Product */
 .product-card {
@@ -276,7 +283,7 @@ form .cancel-button {
   margin-top: 1rem; 
   display: flex;
   align-items: center;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
 }
 
 .concealable-button .add-icon {
@@ -292,7 +299,7 @@ form .cancel-button {
 
 .concealable-form {
   margin-top: 1rem;
-  margin-bottom: 10rem;
+  margin-bottom: 3rem;
 }
 
 .hide { display: none; }

@@ -15,7 +15,7 @@ const AnnouncementSchema = new Schema(
     priority: {
       type: String, 
       required: true, 
-      enum: ["Low", "Medium", "High"]
+      enum: ["Low", "Medium", "High"],
       default: "Low",
     }
   },
@@ -30,4 +30,4 @@ AnnouncementSchema.virtual("datePosted").get(function () {
   );
 });
 
-module.exports = mongoose.model("Comment", CommentSchema);
+module.exports = mongoose.model("Announcement", AnnouncementSchema);

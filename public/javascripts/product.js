@@ -2,11 +2,12 @@ const openCreateProductFormButton = document.querySelector(
   "#open-create-product-form"
 );
 const cancelCreateProductFormButton = document.querySelector(
-  "#cancel-create-warehouse-form"
+  "#cancel-create-product-form"
 );
 const createProductForm = document.querySelector("#create-product-form");
 
 openCreateProductFormButton.addEventListener("click", () => {
+  console.log("Hello");
   openCreateProductFormButton.style.display = "none";
   createProductForm.classList.remove("hide");
 });

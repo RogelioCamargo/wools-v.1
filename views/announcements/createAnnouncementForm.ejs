@@ -1,0 +1,23 @@
+<section id="create-announcement-form" class="form-container concealable-form hide">
+  <h3>Create Announcement</h3>
+  <p>* are required feilds.</p>
+  <br>
+  <form action="/announcements/create" method="POST">
+    <label for="content">Content*</label>
+    <input type="text" id="content" name="content">
+    <div class="flex">
+      <div class="flex-1">
+        <label for="priority">Priority*</label>
+        <select id="priority" name="priority">
+          <option value="Low" selected>Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+      </div>
+    </div>
+    <input type="hidden" id="warehouse" name="warehouse" value="<%= warehouse %>">
+    <input type="hidden" id="user" name="user" value="<%= user %>">
+    <button id="cancel-create-announcement-form" class="cancel-button" type="button">Cancel</button>
+    <button type="submit">Create</button>
+  </form> 
+</section>

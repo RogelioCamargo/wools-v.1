@@ -14,13 +14,12 @@ const compression = require("compression");
 const helmet = require("helmet");
 let flash = require("connect-flash");
 
-// This is a test.
-
 // import routes
 const indexRouter = require('./routes/indexRouter');
 const userRouter = require('./routes/userRouter');
 const warehouseRouter = require("./routes/warehouseRouter");
 const productRouter = require("./routes/productRouter");
+const announcementRouter = require("./routes/announcementRouter");
 
 const app = express();
 
@@ -65,6 +64,7 @@ app.use("/", indexRouter);
 app.use("/users", userRouter);
 app.use("/warehouses", warehouseRouter); 
 app.use("/products", productRouter);
+app.use("/announcements", announcementRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
