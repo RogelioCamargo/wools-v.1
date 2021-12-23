@@ -1,6 +1,15 @@
 ## Project
 Please take a look at it for yourself: [Live Demo](https://roger-solutions.herokuapp.com/dashboard)
 
+This is the first design and implementation of my warehouse tool. This was built using the MVC pattern.
+
+Technologies and services: 
+1. Node.js
+2. HTML/CSS
+4. Javascript
+5. Passport JS
+6. MongoDB and mongoose
+
 ### 1. Login/Register
 
 <img src="/demo/login.png" alt="login screen" style="width: 600px;" />
