@@ -1,7 +1,5 @@
 ## Project
-Please take a look at it for yourself: [Live Demo](https://roger-solutions.herokuapp.com/dashboard)
-
-This is the first design and implementation of my warehouse tool. This was built using the MVC pattern.
+This is the first design and implementation of my warehouse tool. This was built following the MVC pattern.
 
 Technologies and services: 
 1. Node.js
