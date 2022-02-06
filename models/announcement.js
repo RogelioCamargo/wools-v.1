@@ -8,6 +8,10 @@ const AnnouncementSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "User",
     },
+		warehouse: {
+      type: Schema.Types.ObjectId,
+      ref: "Warehouse",
+    },
     content: {
       type: String,
       required: true,

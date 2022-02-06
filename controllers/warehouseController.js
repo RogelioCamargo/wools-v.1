@@ -46,7 +46,7 @@ exports.warehouse_get = async (req, res, next) => {
       Product.find({ warehouse: req.params.id }).exec(callback);
     }, 
     announcements: (callback) => {
-      Announcement.find({}).populate("user").exec(callback); 
+      Announcement.find({ warehouse: req.params.id }).populate("user").exec(callback); 
     }
   }, (err, results) => {
     if (err) return next(err); 
