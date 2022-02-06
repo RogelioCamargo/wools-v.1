@@ -1,5 +1,7 @@
 ## Setup
-You can run the app with a single command: 
+Run the app with a single command!
+
+To start:
 ```
 docker-compose up --build
 ```
