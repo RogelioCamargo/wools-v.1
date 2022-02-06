@@ -14,8 +14,8 @@ exports.announcement_create_post = [
     }
 
     try {
-      const announcement = await Announcement.create({
-        content, user, priority
+      await Announcement.create({
+        content, warehouse, user, priority
       }); 
       return res.redirect(`/warehouses/${warehouse}`)
     } catch (err) {
