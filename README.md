@@ -1,3 +1,13 @@
+## Setup
+You can run the app with a single command: 
+```
+docker-compose up --build
+```
+To terminate: 
+```
+docker-compose down --volumes
+```
+
 ## Project
 This is the first design and implementation of my warehouse tool. This was built following the MVC pattern.
 
@@ -32,7 +42,3 @@ Technologies and services:
 
 <img src="/demo/responsive.png" alt="mobile view" style="width: 250px;">
 
-## Setup
-```
-docker-compose up --build
-```
