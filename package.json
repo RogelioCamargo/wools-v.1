@@ -7,8 +7,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www",
-		"mongo:image": "MONGODB_URL=mongodb://the_username:the_password@localhost:3001/inventory SECRET=secret npm run start"
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "async": "^3.2.1",
@@ -19,7 +18,6 @@
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
-    "dotenv": "^10.0.0",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "express-session": "^1.17.2",
