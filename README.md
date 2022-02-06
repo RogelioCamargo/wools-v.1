@@ -1,5 +1,5 @@
-## Setup
-Run the app with a single command!
+## Setup 🛠️
+Run the app with a single command! 🚀
 
 To start:
 ```
@@ -10,8 +10,9 @@ To terminate:
 docker-compose down --volumes
 ```
 
-## Project
+## Project 💼
 This is the first design and implementation of my warehouse tool. This was built following the MVC pattern.
+Only users logged in can edit/update.
 
 Technologies and services: 
 1. Node.js
